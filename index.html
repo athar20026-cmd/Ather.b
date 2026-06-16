@@ -831,7 +831,7 @@
 
         // --- 5. Dynamic Quiz Engine ---
         function checkQuizLock() {
-            if(appState.streak >= 0 && appState.plan) {
+            if(appState.streak >= 7 && appState.plan) {
                 document.getElementById('quiz-lock').style.display = 'none';
                 document.getElementById('quiz-area').style.display = 'block';
                 document.getElementById('certificate-area').style.display = 'none';
