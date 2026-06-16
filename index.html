@@ -624,8 +624,19 @@
                 appState.allPlanAyahs = allAyahs;
                 
                 // --- خوارزمية تقسيم الأيام بناءً على السور ---
+                // --- خوارزمية تقسيم الأيام بناءً على السور ---
                 let dayAyahs = [];
-                const currentDayIndex = Math.min(appState.streak, 6); // من 0 إلى 6
+
+                // بداية التعديل: التحقق مما إذا كان الطالب قد أتم ورد اليوم بالفعل
+                const todayStr = new Date().toDateString();
+                let currentDayIndex = Math.min(appState.streak, 6);
+
+                // إذا كان الطالب قد سجل إنجازه اليوم، نعرض له نفس آيات اليوم للمراجعة
+                if (appState.lastRead === todayStr && appState.streak > 0) {
+                    currentDayIndex = Math.min(appState.streak - 1, 6);
+                }
+                // نهاية التعديل
+
                 const totalAyahs = allAyahs.length;
 
                 if (totalAyahs < 7) {
