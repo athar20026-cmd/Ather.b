@@ -13,12 +13,10 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="أَثَر">
     
-    
     <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* إضافة خط الرسم العثماني الأصلي */
         @font-face { 
             font-family: 'Uthmanic'; 
             src: url('https://fonts.quran.com/quran/fonts/v1/uthmanic_hafs.woff2') format('woff2'); 
@@ -68,7 +66,6 @@
         .counter-btn:active { transform: scale(0.9); }
         .counter-value { font-size: 24px; font-weight: 800; color: var(--primary); min-width: 30px; text-align: center;}
 
-        /* Custom Select */
         .custom-select-wrapper { position: relative; width: 100%; margin-bottom: 12px; font-family: 'Tajawal', sans-serif; user-select: none; }
         .custom-select-trigger { padding: 15px; background: #f8fafc; border: 2px solid #cbd5e1; border-radius: 12px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 16px; font-weight: bold; color: var(--text-dark); transition: all 0.3s ease; }
         .custom-select-trigger:hover { border-color: var(--primary-light); background: #fff; }
@@ -89,7 +86,6 @@
         
         @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* Buttons */
         .btn { width: 100%; padding: 15px; border-radius: 15px; border: none; font-size: 18px; font-weight: bold; cursor: pointer; transition: 0.3s; display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 10px;}
         .btn-primary { background: var(--primary); color: white; box-shadow: 0 4px 15px rgba(4,107,70,0.3); }
         .btn-primary:hover { background: var(--primary-light); transform: translateY(-2px); }
@@ -97,7 +93,6 @@
         .btn-danger { background: #ef4444; color: white; }
         .btn-danger:hover { background: #dc2626; transform: translateY(-2px); }
 
-        /* Reader Area */
         .reader-container { text-align: center; }
         
         .ayah-display { 
@@ -122,13 +117,11 @@
         .ctrl-btn:active { transform: scale(0.9); }
         .info-badge { display: inline-block; background: #e0f2fe; color: #0369a1; padding: 5px 15px; border-radius: 20px; font-size: 14px; font-weight: bold; margin-bottom: 15px; }
 
-        /* Progress Tracker */
         .days-tracker { display: flex; justify-content: space-between; position: relative; margin: 30px 0; }
         .days-tracker::before { content: ''; position: absolute; top: 50%; left: 0; right: 0; height: 4px; background: #e2e8f0; z-index: 1; transform: translateY(-50%); }
         .day-circle { width: 40px; height: 40px; background: white; border: 3px solid #cbd5e1; border-radius: 50%; display: flex; align-items: center; justify-content: center; position: relative; z-index: 2; font-weight: bold; color: var(--text-gray); transition: 0.3s; }
         .day-circle.done { background: var(--secondary); border-color: var(--secondary); color: white; box-shadow: 0 0 15px rgba(245, 158, 11, 0.4); }
 
-        /* Quiz Area */
         .option-btn-quiz { width: 100%; padding: 15px; margin-bottom: 12px; border: 2px solid #e2e8f0; border-radius: 12px; background: white; font-size: 18px; font-weight: bold; color: var(--text-gray); cursor: pointer; transition: 0.2s; text-align: right; }
         .option-btn-quiz:hover { border-color: var(--primary); background: #f0fdf4; }
         .option-btn-quiz.correct { background: var(--primary); color: white; border-color: var(--primary); }
@@ -144,13 +137,8 @@
         .student-input {width: 100%; padding: 15px; border-radius: 15px; border: 2px solid #cbd5e1; font-size: 18px; outline: none; text-align: center; font-family: 'Tajawal'; font-weight: bold;}
         .student-input:focus { border-color: var(--primary);}
 
-        /* تحسينات الاستجابة للشاشات الصغيرة */
         @media (max-width: 480px) {
-            .ayah-display {
-                font-size: 28px; /* تصغير الخط قليلاً للهواتف */
-                line-height: 1.8;
-                padding: 15px 10px;
-            }
+            .ayah-display { font-size: 28px; line-height: 1.8; padding: 15px 10px; }
             .section-title { font-size: 20px; }
             .btn { font-size: 16px; padding: 12px; }
             .bottom-nav { padding: 5px; }
@@ -173,7 +161,6 @@
     </div>
 
     <section id="page-setup" class="page active">
-        
         <div class="card" id="setup-form-area">
             <h2 class="section-title">إعداد خطة الحفظ للأسبوع ⚙️</h2>
             <p style="text-align: center; color: var(--text-gray); margin-bottom: 20px;">حدد وردك الجميل، سيثبت معك طوال الأسبوع لنختبرك فيه.</p>
@@ -182,7 +169,6 @@
                 <label>ماذا تريد أن تحفظ؟</label>
                 <div class="type-tabs">
                     <div class="type-tab active" onclick="setWirdType('surah')" id="tab-surah">سور قرآنيّة</div>
-                    
                     <div class="type-tab" onclick="setWirdType('juz')" id="tab-juz">جزء كامل</div>
                 </div>
             </div>
@@ -198,8 +184,7 @@
 
             <div class="form-group">
                 <label><i class="fa-solid fa-book-quran"></i> اختر الورد المخصص لك:</label>
-                <div id="targets-container">
-                    </div>
+                <div id="targets-container"></div>
             </div>
 
             <div class="form-group">
@@ -329,7 +314,7 @@
             <button class="btn btn-primary" onclick="startNewWeekCycle()">بدء خطة جديدة للأسبوع القادم <i class="fa-solid fa-star"></i></button>
         </div>
     </section>
-    <!-- زر التثبيت -->
+    
     <div id="install-container" style="display: none; padding: 15px; background: #fffbeb; border-bottom: 2px solid #f59e0b; text-align: center;">
         <p style="color: #92400e; margin-bottom: 10px; font-weight: bold;">ثبّت تطبيق أَثَر للوصول السريع!</p>
         <button id="install-btn" class="btn btn-secondary" style="margin: 0 auto; width: auto; padding: 10px 20px;">
@@ -379,13 +364,12 @@
             }
         });
 
-        // --- 1. State Management ---
         let appState = {
             streak: parseInt(localStorage.getItem('kids_streak')) || 0,
             lastRead: localStorage.getItem('kids_last_read') || null,
             plan: JSON.parse(localStorage.getItem('kids_plan')) || null,
             currentAyahs: [],
-            allPlanAyahs: [], // تمت الإضافة لحفظ جميع آيات الخطة للاختبار
+            allPlanAyahs: [],
             ayahIndex: 0,
             repeatCount: 0,
             isPlaying: false
@@ -400,10 +384,8 @@
         let currentQIndex = 0;
         let correctAnswers = 0; 
 
-        // --- 2. Data Setup ---
         const surahsList = ["الفاتحة","البقرة","آل عمران","النساء","المائدة","الأنعام","الأعراف","الأنفال","التوبة","يونس","هود","يوسف","الرعد","إبراهيم","الحجر","النحل","الإسراء","الكهف","مريم","طه","الأنبياء","الحج","المؤمنون","النور","الفرقان","الشعراء","النمل","القصص","العنكبوت","الروم","لقمان","السجدة","الأحزاب","سبأ","فاطر","يس","الصافات","ص","الزمر","غافر","فصلت","الشورى","الزخرف","الدخان","الجاثية","الأحقاف","محمد","الفتح","الحجرات","ق","الذاريات","الطور","النجم","القمر","الرحمن","الواقعة","الحديد","المجادلة","الحشر","الممتحنة","الصف","الجمعة","المنافقون","التغابن","الطلاق","التحريم","الملك","القلم","الحاقة","المعارج","نوح","الجن","المزمل","المدثر","القيامة","الإنسان","المرسلات","النبأ","النازعات","عبس","التكوير","الانفطار","المطففين","الانشقاق","البروج","الطارق","الأعلى","الغاشية","الفجر","البلد","الشمس","الليل","الضحى","الشرح","التين","العلق","القدر","البينة","الزلزلة","العاديات","القارعة","التكاثر","العصر","الهمزة","الفيل","قريش","الماعون","الكوثر","الكافرون","النصر","المسد","الإخلاص","الفلق","الناس"];
 
-        // --- 3. UI Navigation & Setup ---
         function switchPage(pageId) {
             document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
             document.getElementById('page-' + pageId).classList.add('active');
@@ -464,18 +446,6 @@
                 }
                 selectHtml += `</div></div>`;
                 container.innerHTML = selectHtml;
-            } else if (currentWirdType === 'page') {
-                let selectHtml = `
-                    <div class="custom-select-wrapper target-wrapper">
-                        <input type="hidden" class="custom-select-value target-val" value="1">
-                        <input type="hidden" class="custom-select-name target-name" value="صفحة 1">
-                        <div class="custom-select-trigger">صفحة 1 <i class="fa-solid fa-chevron-down"></i></div>
-                        <div class="custom-options">`;
-                for(let i=1; i<=604; i++) {
-                    selectHtml += `<div class="custom-option ${i === 1 ? 'selected' : ''}" data-value="${i}">الصفحة ${i}</div>`;
-                }
-                selectHtml += `</div></div>`;
-                container.innerHTML = selectHtml;
             }
         }
 
@@ -505,7 +475,6 @@
             updateProgressUI();
         }
 
-        // --- 4. Logic Functions ---
         function savePlanAndStart() {
             const targetWrappers = document.querySelectorAll('.target-wrapper');
             let ids = [];
@@ -530,7 +499,6 @@
             switchPage('reader');
         }
 
-        // تم التعديل لتصفير الأيام وتاريخ القراءة بشكل صحيح
         function resetPlan(skipConfirm = false) {
             if (skipConfirm || confirm("هل أنت متأكد من إلغاء الخطة الحالية؟ سيتم تصفير عدد الأيام التي أنجزتها للبدء من جديد!")) {
                 appState.plan = null;
@@ -571,13 +539,21 @@
             appState.isPlaying = false;
             document.getElementById('play-pause-btn').innerHTML = '<i class="fa-solid fa-play"></i>';
 
-            // تم التعديل لتقسيم السور على الأيام بذكاء
+            // الخريطة المصححة والدقيقة 100%
+            const reciterBitrates = {
+                "ar.alafasy": 128,
+                "ar.husary": 128,
+                "ar.minshawi": 128,
+                "ar.abdulbasitmurattal": 64 
+            };
+            
+            const bitrate = reciterBitrates[reciter] || 64;
+
             try {
                 let allAyahs = [];
-                let surahsData = []; // مصفوفة جديدة لحفظ كل سورة بشكل مستقل لتجنب تداخل السور
+                let surahsData = []; 
                 const idsToFetch = Array.isArray(appState.plan.id) ? appState.plan.id : [appState.plan.id];
                 
-                // جلب بيانات السور المختارة
                 for(let id of idsToFetch) {
                     const url = `https://api.alquran.cloud/v1/${appState.plan.type}/${id}/quran-uthmani`;
                     const res = await fetch(url);
@@ -597,7 +573,7 @@
                         
                         if (ayah.numberInSurah === 1 && surahObj.number !== 1 && surahObj.number !== 9) {
                             processedAyahs.push({
-                                audio: `https://cdn.islamic.network/quran/audio/128/${reciter}/1.mp3`,
+                                audio: `https://cdn.islamic.network/quran/audio/${bitrate}/${reciter}/1.mp3`,
                                 text: "بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ",
                                 numberInSurah: 0,
                                 surah: surahObj,
@@ -611,58 +587,45 @@
                         }
                         
                         ayah.surah = surahObj;
-                        ayah.audio = `https://cdn.islamic.network/quran/audio/128/${reciter}/${ayah.number}.mp3`;
+                        ayah.audio = `https://cdn.islamic.network/quran/audio/${bitrate}/${reciter}/${ayah.number}.mp3`;
                         
                         processedAyahs.push(ayah);
                     }
                     
-                    surahsData.push(processedAyahs); // إضافة آيات السورة ككتلة واحدة مستقلة
+                    surahsData.push(processedAyahs); 
                     allAyahs = allAyahs.concat(processedAyahs);
                 }
                 
-                // حفظ جميع الآيات في الذاكرة لفتح الاختبار النهائي منها لاحقاً
                 appState.allPlanAyahs = allAyahs;
                 
-                // --- خوارزمية تقسيم الأيام بناءً على السور ---
-                // --- خوارزمية تقسيم الأيام بناءً على السور ---
                 let dayAyahs = [];
-
-                // بداية التعديل: التحقق مما إذا كان الطالب قد أتم ورد اليوم بالفعل
                 const todayStr = new Date().toDateString();
                 let currentDayIndex = Math.min(appState.streak, 6);
 
-                // إذا كان الطالب قد سجل إنجازه اليوم، نعرض له نفس آيات اليوم للمراجعة
                 if (appState.lastRead === todayStr && appState.streak > 0) {
                     currentDayIndex = Math.min(appState.streak - 1, 6);
                 }
-                // نهاية التعديل
 
                 const totalAyahs = allAyahs.length;
 
                 if (totalAyahs < 7) {
-                    dayAyahs = allAyahs; // السور القصيرة جداً تقرأ كاملة للتكرار
+                    dayAyahs = allAyahs; 
                 } else {
-                    // 1. تحديد نصيب كل سورة من الأيام السبعة بناءً على نسبة عدد آياتها
                     let daysPerSurah = surahsData.map(surahAyahs => {
                         return Math.max(1, Math.round((surahAyahs.length / totalAyahs) * 7));
                     });
                     
-                    // 2. ضبط مجموع الأيام ليكون 7 بالضبط (لمعالجة أي كسور رياضية)
                     let sumDays = daysPerSurah.reduce((a, b) => a + b, 0);
                     while (sumDays !== 7) {
                         let maxIdx = daysPerSurah.indexOf(Math.max(...daysPerSurah));
                         if (sumDays < 7) {
-                            daysPerSurah[maxIdx]++; 
-                            sumDays++;
+                            daysPerSurah[maxIdx]++; sumDays++;
                         } else {
-                            if (daysPerSurah[maxIdx] > 1) { 
-                                daysPerSurah[maxIdx]--; 
-                                sumDays--; 
-                            } else { break; }
+                            if (daysPerSurah[maxIdx] > 1) { daysPerSurah[maxIdx]--; sumDays--; } 
+                            else { break; }
                         }
                     }
                     
-                    // 3. معرفة اليوم الحالي مخصص لأي سورة بالضبط، وأي جزء من هذه السورة
                     let targetSurahIndex = 0;
                     let dayWithinSurah = currentDayIndex;
                     
@@ -674,7 +637,6 @@
                         dayWithinSurah -= daysPerSurah[i];
                     }
                     
-                    // 4. استقطاع الآيات الخاصة بهذا اليوم من السورة المحددة فقط
                     let targetSurahAyahs = surahsData[targetSurahIndex];
                     let assignedDaysForThisSurah = daysPerSurah[targetSurahIndex];
                     
@@ -683,7 +645,6 @@
                     
                     dayAyahs = targetSurahAyahs.slice(startIndex, endIndex);
                     
-                    // حماية: إذا صدف أن التقسيم صغير جداً واليوم فارغ، نعطيه آية واحدة على الأقل
                     if(dayAyahs.length === 0 && targetSurahAyahs.length > 0) {
                         dayAyahs = [targetSurahAyahs[targetSurahAyahs.length - 1]];
                     }
@@ -696,7 +657,6 @@
                 document.getElementById('loading-ayahs').style.display = 'none';
                 document.getElementById('ayah-container').style.display = 'block';
                 
-                // جلب اسم السورة الخاصة باليوم لعرضها في العنوان
                 let currentSurahName = (dayAyahs.length > 0 && dayAyahs[0].surah) ? dayAyahs[0].surah.name : appState.plan.name;
                 document.getElementById('display-title').innerText = `ورد اليوم ${currentDayIndex + 1} - (سورة ${currentSurahName})`;
                 
@@ -829,7 +789,6 @@
             }
         }
 
-        // --- 5. Dynamic Quiz Engine ---
         function checkQuizLock() {
             if(appState.streak >= 7 && appState.plan) {
                 document.getElementById('quiz-lock').style.display = 'none';
@@ -846,7 +805,6 @@
         }
 
         function prepareQuiz() {
-            // تم التعديل للاعتماد على جميع آيات الخطة بدلاً من ورد اليوم الأخير فقط
             let sourceAyahs = appState.allPlanAyahs || appState.currentAyahs;
 
             if (!sourceAyahs || sourceAyahs.length === 0) {
@@ -874,7 +832,6 @@
 
             let shuffledAyahs = [...validAyahs].sort(() => 0.5 - Math.random());
             
-            // 1. سؤال السورة
             let ay1 = shuffledAyahs[0];
             let q1Opts = Array.from(new Set([ay1.surah.name, "الإخلاص", "الفلق", "الناس", "الكوثر"])).slice(0,3);
             if(!q1Opts.includes(ay1.surah.name)) { q1Opts[0] = ay1.surah.name; } 
@@ -887,7 +844,6 @@
                 diff: "سهل", class: "diff-easy"
             });
 
-            // 2. أسئلة إكمال الآية (حتى 18 سؤال)
             let completeVerseCount = Math.min(18, shuffledAyahs.length); 
             for (let i = 0; i < completeVerseCount; i++) {
                 let ay = shuffledAyahs[i];
@@ -919,7 +875,6 @@
                 });
             }
 
-            // 3. سؤال عدد الآيات
             let ayLast = shuffledAyahs[shuffledAyahs.length - 1]; 
             let correctCount = ayLast.surah.numberOfAyahs.toString();
             let qLastOpts = Array.from(new Set([
@@ -937,7 +892,6 @@
                 diff: "صعب", class: "diff-hard"
             });
 
-            // خلط الأسئلة الوسطى
             let middleQuestions = generatedQuiz.slice(1, -1).sort(() => Math.random() - 0.5);
             generatedQuiz = [generatedQuiz[0], ...middleQuestions, generatedQuiz[generatedQuiz.length - 1]];
 
@@ -1003,7 +957,6 @@
             }, 1500);
         }
 
-        // --- 6. Certificate Generation ---
         function generateCertificate() {
             const name = document.getElementById('student-name').value || 'بطل القرآن';
             const date = new Date().toLocaleDateString('ar-EG');
@@ -1045,7 +998,6 @@ p{font-size:24px;color:#475569; line-height: 1.6;}
             updateSetupUI(); 
         };
 
-        // PWA Service Worker Registration
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
                 navigator.serviceWorker.register('./sw.js')
@@ -1057,39 +1009,30 @@ p{font-size:24px;color:#475569; line-height: 1.6;}
                     });
             });
         }
-        // متغير لتخزين الحدث الذي يسمح بالتثبيت
+        
         let deferredPrompt;
         const installContainer = document.getElementById('install-container');
         const installBtn = document.getElementById('install-btn');
 
-        // الاستماع لحدث قبل التثبيت
         window.addEventListener('beforeinstallprompt', (e) => {
-            // منع المتصفح من إظهار إشعاره التلقائي
             e.preventDefault();
-            // حفظ الحدث ليتم تشغيله لاحقاً
             deferredPrompt = e;
-            // إظهار الزر الخاص بنا
             installContainer.style.display = 'block';
         });
 
-        // عند النقر على زر التثبيت
         installBtn.addEventListener('click', () => {
             if (deferredPrompt) {
-                // إظهار نافذة التثبيت الخاصة بالمتصفح
                 deferredPrompt.prompt();
-                // انتظار اختيار المستخدم
                 deferredPrompt.userChoice.then((choiceResult) => {
                     if (choiceResult.outcome === 'accepted') {
                         console.log('تم قبول التثبيت');
                     }
                     deferredPrompt = null;
-                    // إخفاء الزر بعد الضغط عليه
                     installContainer.style.display = 'none';
                 });
             }
         });
 
-        // إخفاء الزر إذا تم تثبيت التطبيق بالفعل
         window.addEventListener('appinstalled', () => {
             installContainer.style.display = 'none';
             console.log('تم تثبيت التطبيق بنجاح');
